@@ -13,7 +13,7 @@ namespace Compilador2020.Scanner
         public static List<AFD> listAFD = new List<AFD>();
         public static List<Tokens> listAlfabeto = new List<Tokens>();
         public static List<TDS> listTDS = new List<TDS>();
-        public static List<Tokens> lista_tokens_reconocidos = new List<Tokens>();
+        public List<Tokens> lista_tokens_reconocidos = new List<Tokens>();
 
         //Carga los archivos .xml y los guarda en un DataSet
         DataView CargarXML(string archivo)
@@ -82,69 +82,68 @@ namespace Compilador2020.Scanner
         }
 
         // Funciones de movimientos
-        //public static int Reconocedor_Lexico()
-        //{
-        //    int estado = 0;
-        //    int newestado = 0;
-        //    int nidentificador = 0;
-        //    char simbolo;
-        //    string lexema = null;
-        //    Tokens tk = new Tokens();
-        //    string[] palabras = null;
-        //    int j;
+        public int Reconocedor_Lexico()
+        {
+            int estado = 0;
+            int newestado = 0;
+            int nidentificador = 0;
+            char simbolo;
+            string lexema = null;
+            Tokens tk = new Tokens();
+            string[] palabras = null;
+            int j;
 
-        //    //Formateando el texto
-        //    string[] listaFilas = text_file_name.Trim().Split("\n");
-        //    foreach (string linea in listaFilas)
-        //    {
-        //        palabras = linea.Trim().Split(' ', '#');
-        //    }
+            //Formateando el texto
+            string[] listaFilas = text_file_name.Trim().Split("\n");
+            foreach (string linea in listaFilas)
+            {
+                palabras = linea.Trim().Split(' ','#');
+            }
 
-        //    int error = 0;
-        //    //Recorremos las palabras para ir reconociendo token por toke
-        //    for (int cont = 0; cont < palabras.Length; cont++)
-        //    {
-        //        string palabra = palabras[cont];
-        //        j = 0;
-        //        while (j < palabra.Length)
-        //        {
-        //            simbolo = palabra[j];
-        //            newestado = Movimiento_AFD(estado, simbolo);
-        //            if (newestado == 999)
-        //            {
-        //                // presentar mensaje de error
-        //                error = 999;
-        //                j++
-        //                continue;
-        //            }
-        //            if (newestado < 0)
-        //            {
-        //                // reconocio un token
-        //                newestado = -newestado;
-        //                tk.NumeroToken = newestado;
-        //                tk = Buscar_Token(newestado);
-        //                tk.LexemaToken = lexema;
-        //                lista_tokens_reconocidos.Add(tk);
-        //                if (tk.NumeroToken == 0)
-        //                {
-        //                    // es un identificador
-        //                    TDS identificador = new TDS();
-        //                    //Verificar que tipo de dato es
+            int error = 0;
+            //Recorremos las palabras para ir reconociendo token por toke
+            for (int cont = 0; cont < palabras.Length; cont++)
+            {
+                string palabra = palabras[cont];
+                j = 0;
+                while (j < palabra.Length)
+                {
+                    simbolo = palabra[j];
+                    newestado = Movimiento_AFD(estado, simbolo);
+                    if (newestado == 999)
+                    {
+                        // presentar mensaje de error
+                        error = 999;
+                        j++;
+                        continue;
+                    }
+                    if (newestado < 0)
+                    {
+                        // reconocio un token
+                        newestado = -newestado;
+                        tk.NumeroToken = newestado;
+                        tk = Buscar_Token(newestado);
+                        tk.LexemaToken = lexema;
+                        lista_tokens_reconocidos.Add(tk);
+                        if (tk.NumeroToken == 0)
+                        {
+                            // es un identificador
+                            TDS identificador = new TDS();
+                            //Verificar que tipo de dato es
 
-        //                    // almacenarlo en la TDS
-        //                    identificador.Nombre = lexema;
-        //                    identificador.Numero = nidentificador++;
-        //                    listTDS.Add(identificador);
-        //                }
-
-        //            }
-        //            lexema += simbolo;
-        //            estado = newestado;
-        //            j++;
-        //        }
-        //    }
-        //    return error;
-        //}
+                            // almacenarlo en la TDS
+                            identificador.Nombre = lexema;
+                            identificador.Numero = nidentificador++;
+                            listTDS.Add(identificador);
+                        }
+                    }
+                    lexema += simbolo;
+                    estado = newestado;
+                    j++;
+                }
+            }
+            return error;
+        }
 
         private static int Movimiento_AFD(int estado, char simbolo)
         {

@@ -23,7 +23,6 @@ namespace Compilador2020.Scanner
 
         public TDS()
         {
-
         }
 
         public int Numero { get => numero; set => numero = value; }

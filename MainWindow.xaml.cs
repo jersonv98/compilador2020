@@ -34,6 +34,8 @@ namespace Compilador2020
         {
             lexico.Cargar_Alfabeto(tbl_Alfabeto);
             lexico.Cargar_AFD(tbl_AFD);
+            lexico.Reconocedor_Lexico();
+            tbl_TokensReconocidos.ItemsSource = lexico.lista_tokens_reconocidos;
         }
     }
 }

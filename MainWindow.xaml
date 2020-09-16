@@ -33,6 +33,15 @@
                     <DataGrid x:Name="tbl_AFD" Grid.ColumnSpan="2" Margin="10,10,434,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" MaxColumnWidth="50"/>
                 </Grid>
             </TabItem>
+            <TabItem x:Name="tabItemTokensReconocidos" Header="Tokens Reconocidos">
+                <Grid x:Name="gridTokensReconocidos" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="tbl_TokensReconocidos" Grid.ColumnSpan="2" Margin="10,10,179,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" MaxColumnWidth="50"/>
+                </Grid>
+            </TabItem>
         </TabControl>
         <Button x:Name="BtnSintactico" Content="Sintáctico" HorizontalAlignment="Left" Height="44" Margin="24,240,0,0" VerticalAlignment="Top" Width="109" IsEnabled="False" FontFamily="Segoe Script" FontSize="16" Background="#FF868686"/>
         <Button x:Name="BtnSemantico" Content="Semántico" HorizontalAlignment="Left" Height="44" Margin="24,310,0,0" VerticalAlignment="Top" Width="109" FontFamily="Segoe Script" FontSize="16" IsEnabled="False" Background="#FF8686DD"/>
