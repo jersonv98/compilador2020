@@ -13,7 +13,7 @@ namespace Compilador2020.Scanner
         public static List<AFD> listAFD = new List<AFD>();
         public static List<Tokens> listAlfabeto = new List<Tokens>();
         public static List<TDS> listTDS = new List<TDS>();
-        public List<Tokens> lista_tokens_reconocidos = new List<Tokens>();
+        public static List<Tokens> lista_tokens_reconocidos = new List<Tokens>();
 
         //Carga los archivos .xml y los guarda en un DataSet
         DataView CargarXML(string archivo)
@@ -59,13 +59,13 @@ namespace Compilador2020.Scanner
         }
 
         // Aperturar el archivo fuente de entrada
-        static string text_file_name = Cargar_Archivo_Fuente();
+        public string text_file_name = Cargar_Archivo_Fuente();
 
         // Proceso de ir reconociendo los tokens
         //int err = Reconocedor_Lexico();
 
         // Funcion que carga el archivo fuente a compilar
-        static string Cargar_Archivo_Fuente()
+        public static string Cargar_Archivo_Fuente()
         {
             string ruta_file = Path.GetFullPath("../../../Scanner/FilesLexico");
             // Perdir el nombre de archivo a compliar
@@ -144,6 +144,8 @@ namespace Compilador2020.Scanner
             }
             return error;
         }
+
+
 
         private static int Movimiento_AFD(int estado, char simbolo)
         {

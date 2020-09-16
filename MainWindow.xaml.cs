@@ -32,10 +32,15 @@ namespace Compilador2020
 
         private void BtnLexico_Click(object sender, RoutedEventArgs e)
         {
+            //cargar alfabeto en mi tabla alfabeto
             lexico.Cargar_Alfabeto(tbl_Alfabeto);
+            //cargar AFDA en mi tabla AFD
             lexico.Cargar_AFD(tbl_AFD);
+            //ejecutar el metodo reconocedor lexico
             lexico.Reconocedor_Lexico();
-            tbl_TokensReconocidos.ItemsSource = lexico.lista_tokens_reconocidos;
+            //tbl_TokensReconocidos.ItemsSource = lexico.lista_tokens_reconocidos;
+            //mostrar texto ejemplo en una caja de texto
+            TextBoxEjemplo.Text = lexico.text_file_name;
         }
     }
 }
