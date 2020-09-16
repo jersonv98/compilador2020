@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="anadir.png" />
+    <None Remove="cargar.png" />
+    <None Remove="images.png" />
+    <None Remove="unnamed.png" />
+    <None Remove="Vive.png" />
+    <None Remove="xml-file-1686870-1436001 - copia.png" />
+    <None Remove="xml-file-1686870-1436001.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="anadir.png" />
+    <Resource Include="cargar.png" />
+    <Resource Include="images.png" />
+    <Resource Include="unnamed.png" />
+    <Resource Include="Vive.png" />
+    <Resource Include="xml-file-1686870-1436001 - copia.png" />
+    <Resource Include="xml-file-1686870-1436001.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Parser\" />
+    <Folder Include="Scanner\FilesLexico\" />
+  </ItemGroup>
+
+</Project>
