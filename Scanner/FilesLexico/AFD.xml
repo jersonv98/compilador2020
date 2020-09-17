@@ -399,7 +399,6 @@
 		<lee>f</lee>
 		<nestado>45</nestado>
 	</movimiento>
-	
 	<movimiento>
 		<estado>45</estado>
 		<lee>#</lee>
@@ -435,7 +434,6 @@
 		<lee>#</lee>
 		<nestado>-27</nestado>
 	</movimiento>
-
 	<movimiento>
 		<estado>0</estado>
 		<lee>l</lee>
@@ -461,7 +459,7 @@
 		<lee>#</lee>
 		<nestado>-28</nestado>
 	</movimiento>
-<movimiento>
+	<movimiento>
 		<estado>4</estado>
 		<lee>o</lee>
 		<nestado>43</nestado>
@@ -476,9 +474,6 @@
 		<lee>#</lee>
 		<nestado>-29</nestado>
 	</movimiento>
-	
-	
-
 	<movimiento>
 		<estado>16</estado>
 		<lee>+</lee>
@@ -489,15 +484,12 @@
 		<lee>#</lee>
 		<nestado>-30</nestado>
 	</movimiento>
-
-
-    
 	<movimiento>
 		<estado>0</estado>
 		<lee>g</lee>
 		<nestado>5</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>5</estado>
 		<lee>e</lee>
 		<nestado>44</nestado>
@@ -547,8 +539,6 @@
 		<lee>#</lee>
 		<nestado>-31</nestado>
 	</movimiento>
-
-    
 	<movimiento>
 		<estado>40</estado>
 		<lee>c</lee>
@@ -584,8 +574,6 @@
 		<lee>#</lee>
 		<nestado>-32</nestado>
 	</movimiento>
-	
-    
 	<movimiento>
 		<estado>2</estado>
 		<lee>o</lee>
@@ -626,8 +614,6 @@
 		<lee>#</lee>
 		<nestado>-33</nestado>
 	</movimiento>
-	
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>,</lee>
@@ -638,8 +624,6 @@
 		<lee>#</lee>
 		<nestado>-34</nestado>
 	</movimiento>
-
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>(</lee>
@@ -650,8 +634,6 @@
 		<lee>#</lee>
 		<nestado>-35</nestado>
 	</movimiento>
-
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>)</lee>
@@ -662,8 +644,6 @@
 		<lee>#</lee>
 		<nestado>-36</nestado>
 	</movimiento>
-
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>;</lee>
@@ -674,8 +654,6 @@
 		<lee>#</lee>
 		<nestado>-37</nestado>
 	</movimiento>
-		
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>d</lee>
@@ -691,8 +669,6 @@
 		<lee>#</lee>
 		<nestado>-38</nestado>
 	</movimiento>
-	
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>:</lee>
@@ -703,8 +679,6 @@
 		<lee>#</lee>
 		<nestado>-39</nestado>
 	</movimiento>
-
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>v</lee>
@@ -725,8 +699,6 @@
 		<lee>#</lee>
 		<nestado>-40</nestado>
 	</movimiento>
-
-    
 	<movimiento>
 		<estado>1</estado>
 		<lee>r</lee>
@@ -752,8 +724,6 @@
 		<lee>#</lee>
 		<nestado>-41</nestado>
 	</movimiento>
-
-
 	<movimiento>
 		<estado>0</estado>
 		<lee>"</lee>
@@ -849,7 +819,6 @@
 		<lee>%</lee>
 		<nestado>55</nestado>
 	</movimiento>
-
 	<movimiento>
 		<estado>15</estado>
 		<lee>&lt;</lee>
@@ -977,12 +946,12 @@
 	</movimiento>
 	<movimiento>
 		<estado>55</estado>
-		<lee>L</lee>
+		<lee>&lt;</lee>
 		<nestado>55</nestado>
 	</movimiento>
 	<movimiento>
 		<estado>55</estado>
-		<lee>G</lee>
+		<lee>&gt;</lee>
 		<nestado>55</nestado>
 	</movimiento>
 	<movimiento>
@@ -1020,8 +989,6 @@
 		<lee>#</lee>
 		<nestado>-42</nestado>
 	</movimiento>
-
-   
 	<movimiento>
 		<estado>0</estado>
 		<lee>digito</lee>
@@ -1037,8 +1004,6 @@
 		<lee>#</lee>
 		<nestado>-43</nestado>
 	</movimiento>
-
-	
 	<movimiento>
 		<estado>13</estado>
 		<lee>.</lee>
@@ -1059,8 +1024,6 @@
 		<lee>#</lee>
 		<nestado>-44</nestado>
 	</movimiento>
-
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>'</lee>
@@ -1158,12 +1121,12 @@
 	</movimiento>
 	<movimiento>
 		<estado>34</estado>
-		<lee>L</lee>
+		<lee>&lt;</lee>
 		<nestado>83</nestado>
 	</movimiento>
 	<movimiento>
 		<estado>34</estado>
-		<lee>G</lee>
+		<lee>&gt;</lee>
 		<nestado>83</nestado>
 	</movimiento>
 	<movimiento>
@@ -1201,15 +1164,11 @@
 		<lee>#</lee>
 		<nestado>-45</nestado>
 	</movimiento>
-
-	
-	
 	<movimiento>
 		<estado>0</estado>
 		<lee>.</lee>
 		<nestado>26</nestado>
 	</movimiento>
-
 	<movimiento>
 		<estado>0</estado>
 		<lee>\</lee>

@@ -1,0 +1,25 @@
+
+Nalfabeto 
+iff for do 
+Total_10         +                 -          / 
+
+
+
+**  <\*Comenta r io12#3*\ 
+&& & | || 
+Numerocuenta != true false int   float  char
+text    main    [ ]
+while   loop getElement      document
+
+continue
+
+,
+
+do          : var       break
+
+
+"qweqw# 1 23123"
+1234
+1.23
+
+'q'

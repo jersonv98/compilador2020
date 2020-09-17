@@ -8,23 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="anadir.png" />
-    <None Remove="cargar.png" />
-    <None Remove="images.png" />
+    <None Remove="1516578954.jpg" />
+    <None Remove="button_blank_blue_14984.png" />
+    <None Remove="button_blank_green_14986.png" />
+    <None Remove="button_blank_yellow_14988.png" />
+    <None Remove="csharp_original_logo_icon_146578.png" />
+    <None Remove="device-keyboard-add-circle.png" />
+    <None Remove="kisspng-c-programming-language-logo-microsoft-visual-stud-atlas-portfolio-5b89919299aab1.1956912415357423546294.jpg" />
+    <None Remove="Logo.png" />
     <None Remove="unnamed.png" />
     <None Remove="Vive.png" />
-    <None Remove="xml-file-1686870-1436001 - copia.png" />
-    <None Remove="xml-file-1686870-1436001.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="anadir.png" />
-    <Resource Include="cargar.png" />
-    <Resource Include="images.png" />
+    <Resource Include="1516578954.jpg" />
+    <Resource Include="button_blank_blue_14984.png" />
+    <Resource Include="button_blank_green_14986.png" />
+    <Resource Include="button_blank_yellow_14988.png" />
+    <Resource Include="csharp_original_logo_icon_146578.png" />
+    <Resource Include="kisspng-c-programming-language-logo-microsoft-visual-stud-atlas-portfolio-5b89919299aab1.1956912415357423546294.jpg" />
+    <Resource Include="Logo.png" />
     <Resource Include="unnamed.png" />
     <Resource Include="Vive.png" />
-    <Resource Include="xml-file-1686870-1436001 - copia.png" />
-    <Resource Include="xml-file-1686870-1436001.png" />
   </ItemGroup>
 
   <ItemGroup>

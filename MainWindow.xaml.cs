@@ -38,9 +38,17 @@ namespace Compilador2020
             lexico.Cargar_AFD(tbl_AFD);
             //ejecutar el metodo reconocedor lexico
             lexico.Reconocedor_Lexico();
-            //tbl_TokensReconocidos.ItemsSource = lexico.lista_tokens_reconocidos;
+            //reconocer tokens y mostrarlos en pantalla
+            tbl_TokensReconocidos.ItemsSource = lexico.list_tokens_reconocidos;
+            BtnSintactico.IsEnabled = true;
+            //mostrar movimientos en pantalla
+            tbl_Movimientos.ItemsSource = lexico.listMovimientos;
+            //mostrar tabla de simbolos en pantalla
+            tbl_TDS.ItemsSource = lexico.listTDS;
+            //mostrar errores
+            lexico.Cargar_Errores(tbl_Errores);
             //mostrar texto ejemplo en una caja de texto
-            TextBoxEjemplo.Text = lexico.text_file_name;
+            TextBoxEjemplo.Text = lexico.Cargar_Archivo_Fuente();
         }
     }
 }

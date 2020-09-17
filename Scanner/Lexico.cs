@@ -10,10 +10,19 @@ namespace Compilador2020.Scanner
     class Lexico
     {
         //Declarar tipos de datos globales
-        public static List<AFD> listAFD = new List<AFD>();
-        public static List<Tokens> listAlfabeto = new List<Tokens>();
-        public static List<TDS> listTDS = new List<TDS>();
-        public static List<Tokens> lista_tokens_reconocidos = new List<Tokens>();
+        public static List<AFD> listAFD;
+        public List<AFD> listMovimientos;
+        public List<Tokens> listAlfabeto;
+        public List<TDS> listTDS;
+        public List<Tokens> list_tokens_reconocidos;
+        public static List<Errores> listErrores = new List<Errores>();
+        public string text_file_name;
+
+        public Lexico()
+        {
+            // Aperturar el archivo fuente de entrada
+            Cargar_Archivo_Fuente();
+        }
 
         //Carga los archivos .xml y los guarda en un DataSet
         DataView CargarXML(string archivo)
@@ -30,122 +39,172 @@ namespace Compilador2020.Scanner
         {
             Tabla.ItemsSource = CargarXML("alfabeto.xml");
             int filas = Tabla.Items.Count - 1;
-            Tokens token = new Tokens();
+            Tokens token;
+            listAlfabeto = new List<Tokens>();
             for (int i = 0; i < filas; i++)
             {
-                token.NumeroToken = int.Parse((Tabla.Items[i] as DataRowView).Row.ItemArray[0] + "");
-                token.SinonimoToken = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[1];
-                token.NombreToken = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[2];
-                token.LexemaToken = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[3];
+                token = new Tokens()
+                {
+                    NumeroToken = int.Parse((Tabla.Items[i] as DataRowView).Row.ItemArray[0] + ""),
+                    SinonimoToken = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[1],
+                    NombreToken = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[2],
+                    LexemaToken = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[3]
+                };
                 listAlfabeto.Add(token);
             }
             return listAlfabeto;
         }
 
-        // Cargar el DataSet con mi AFD en un listafd de tipo AFD
+        //Cargar el DataSet con mi AFD en un listafd de tipo AFD
         public List<AFD> Cargar_AFD(DataGrid Tabla)
         {
             Tabla.ItemsSource = CargarXML("AFD.xml");
             int filas = Tabla.Items.Count - 1;
-            AFD afd = new AFD();
+            AFD afd;
+            listAFD = new List<AFD>();
             for (int i = 0; i < filas; i++)
             {
-                afd.EstadoInicial = int.Parse((Tabla.Items[i] as DataRowView).Row.ItemArray[0] + "");
-                afd.Leyendo = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[1];
-                afd.EstadoFinal = int.Parse((Tabla.Items[i] as DataRowView).Row.ItemArray[2] + "");
+                afd = new AFD()
+                {
+                    Estado = int.Parse((Tabla.Items[i] as DataRowView).Row.ItemArray[0] + ""),
+                    Leyendo = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[1],
+                    NEstado = int.Parse((Tabla.Items[i] as DataRowView).Row.ItemArray[2] + "")
+
+                };
                 listAFD.Add(afd);
             }
             return listAFD;
         }
 
-        // Aperturar el archivo fuente de entrada
-        public string text_file_name = Cargar_Archivo_Fuente();
+        //Cargar lista de errores en un TextBox
+        public void Cargar_Errores(DataGrid Datos)
+        {
+            Datos.ItemsSource = listErrores;
+        }
 
-        // Proceso de ir reconociendo los tokens
-        //int err = Reconocedor_Lexico();
+
 
         // Funcion que carga el archivo fuente a compilar
-        public static string Cargar_Archivo_Fuente()
+        public string Cargar_Archivo_Fuente()
         {
             string ruta_file = Path.GetFullPath("../../../Scanner/FilesLexico");
-            // Perdir el nombre de archivo a compliar
-            string texto_archivo_fuente = CodigoFuente(ruta_file);
-            // Subir a una estructura para ir leyendo caracter por caracter
-
-            return texto_archivo_fuente;
+            text_file_name = File.ReadAllText(ruta_file + "\\archivo.txt");
+            return text_file_name;
         }
+        //public void Cargar_Archivo_Fuente()
+        //{
+        //    string ruta_file = Path.GetFullPath("../../../Scanner/FilesLexico");
+        //    // Subir a una estructura para ir leyendo caracter por caracter
+        //    text_file_name = CodigoFuente(ruta_file);
+        //}
 
-        static string CodigoFuente(string ruta)
-        {
-            string texto_archivo = File.ReadAllText(ruta + "\\ejemplo.txt");
-            return texto_archivo;
-        }
+        //static string CodigoFuente(string ruta)
+        //{
+        //    string path = ruta + \\archivo.txt"";
+        //    string texto_archivo = File.ReadAllText(path);
+        //    return texto_archivo;
+        //}
 
-        // Funciones de movimientos
-        public int Reconocedor_Lexico()
+        //Funciones de movimientos
+        public void Reconocedor_Lexico()
         {
-            int estado = 0;
-            int newestado = 0;
-            int nidentificador = 0;
+            listMovimientos = new List<AFD>();
+            list_tokens_reconocidos = new List<Tokens>();
+            //listErrores = new List<Errores>();
+            listTDS = new List<TDS>();
+            int estado = 0, newestado = 0, nidentificador = 0;
             char simbolo;
             string lexema = null;
-            Tokens tk = new Tokens();
-            string[] palabras = null;
-            int j;
 
-            //Formateando el texto
-            string[] listaFilas = text_file_name.Trim().Split("\n");
-            foreach (string linea in listaFilas)
-            {
-                palabras = linea.Trim().Split(' ','#');
-            }
+            //Formateando el texto de entrada, tomar en cuenta que al quitar el blando dentro de lo que este en comillas se pondra como #
+            //Hacer un replace siempre y cuando no este entre comillas
+            text_file_name = text_file_name.Replace('\n', '#').Replace('\t', '#').Replace('\r', '#').Replace(' ', '#');
+            char[] palabras = text_file_name.ToCharArray();
 
-            int error = 0;
-            //Recorremos las palabras para ir reconociendo token por toke
-            for (int cont = 0; cont < palabras.Length; cont++)
+            int j = 0;
+            AFD afd;
+            while (j < palabras.Length)
             {
-                string palabra = palabras[cont];
-                j = 0;
-                while (j < palabra.Length)
+                simbolo = Convert.ToChar(palabras[j]);
+                newestado = Movimiento_AFD(estado, simbolo);
+                if (!(simbolo.Equals('#') && (estado == 0)))
                 {
-                    simbolo = palabra[j];
-                    newestado = Movimiento_AFD(estado, simbolo);
-                    if (newestado == 999)
+                    afd = new AFD()
                     {
-                        // presentar mensaje de error
-                        error = 999;
-                        j++;
-                        continue;
-                    }
+                        Estado = estado,
+                        Leyendo = simbolo.ToString(),
+                        NEstado = newestado
+                    };
                     if (newestado < 0)
                     {
-                        // reconocio un token
-                        newestado = -newestado;
-                        tk.NumeroToken = newestado;
-                        tk = Buscar_Token(newestado);
-                        tk.LexemaToken = lexema;
-                        lista_tokens_reconocidos.Add(tk);
-                        if (tk.NumeroToken == 0)
-                        {
-                            // es un identificador
-                            TDS identificador = new TDS();
-                            //Verificar que tipo de dato es
-
-                            // almacenarlo en la TDS
-                            identificador.Nombre = lexema;
-                            identificador.Numero = nidentificador++;
-                            listTDS.Add(identificador);
-                        }
+                        afd.Lee = "Token reconocido " + (-newestado);
                     }
-                    lexema += simbolo;
-                    estado = newestado;
-                    j++;
+                    listMovimientos.Add(afd);
                 }
+                if (newestado == 998)
+                {
+                    estado = 0;
+                    lexema = "";
+                    j++;
+                    continue;
+                }
+                if (newestado == 999)
+                {
+                    // presentar mensaje de error
+                    Errores miError = new Errores()
+                    {
+                        NumError = 1,
+                        MensajeError = "Error léxico: simbolo " + simbolo + " no reconocido en el lexema " + lexema
+                    };
+                    listErrores.Add(miError);
+
+                    //vovlemos al estado 0 y lexema para que vuleva a reconocer otro token
+                    while (true)
+                    {
+                        if (palabras[j] != '#')
+                        {
+                            j++;
+                            continue;
+                        }
+                        break;
+                    }
+                    estado = 0;
+                    lexema = "";
+                    j++;
+                    continue;
+                }
+                else if (newestado < 0)
+                {
+                    // reconocio un token
+                    newestado = -newestado;
+                    Buscar_Token(newestado, lexema);
+                    if (newestado == 1)
+                    {
+                        //Quedarnos solo con 8 caracteres significativos
+                        lexema = lexema.Substring(0, 8);
+                        //Se reconoció un identificador, guardar en la tabla de simbolos
+                        //almacenarlo en la TDS
+                        TDS identificador = new TDS()
+                        {
+                            Numero = nidentificador++,
+                            Nombre = lexema
+                        };
+                        listTDS.Add(identificador);
+                    }
+                    estado = 0;
+                    lexema = "";
+                }
+                else
+                {
+                    if (!simbolo.Equals('#'))
+                    {
+                        lexema += simbolo;
+                    }
+                    estado = newestado;
+                }
+                j++;
             }
-            return error;
         }
-
-
 
         private static int Movimiento_AFD(int estado, char simbolo)
         {
@@ -169,39 +228,60 @@ namespace Compilador2020.Scanner
             {
                 //validar que el simbolo exista en nuestro alfabeto
                 //caso ha sido otro caracter
+                string simbolos = "!#$%&|<>_=:,?'+-/*().{}";
+                string simboloString = simbolo.ToString();
+                if (!simbolos.Contains(simboloString))
+                {
+                    Errores miError = new Errores()
+                    {
+                        NumError = 2,
+                        MensajeError = "Error léxico: simbolo " + simbolo + " no es parte de nuestro lenguaje"
+                    };
+                    listErrores.Add(miError);
+                    return 998;
+                }
                 caso = 4;
             }
             foreach (AFD transicion in listAFD)
             {
-                if (transicion.EstadoInicial == estado)
+                if (transicion.Estado == estado)
                 {
                     if ((transicion.Leyendo.Equals("letra") && caso == 2) ||
                         (transicion.Leyendo.Equals("mayuscula") && caso == 1) ||
                         (transicion.Leyendo.Equals("digito") && caso == 3) ||
                         (transicion.Leyendo.Equals("simbolo") && caso == 4))
                     {
-                        return transicion.EstadoFinal;
+                        return transicion.NEstado;
                     }
-                    if (transicion.Leyendo.Equals(simbolo))
+                    string letra = simbolo.ToString();
+                    if (transicion.Leyendo.Equals(letra))
                     {
-                        return transicion.EstadoFinal;
+                        return transicion.NEstado;
                     }
                 }
             }
             return 999;
         }
 
-        public static Tokens Buscar_Token(int numToken)
+        public void Buscar_Token(int numToken, string lexema)
         {
-            Tokens token = new Tokens();
+            Tokens token; ;
             foreach (Tokens item in listAlfabeto)
             {
                 if (item.NumeroToken == numToken)
                 {
-                    token = item;
+                    token = new Tokens()
+                    {
+                        NumeroToken = item.NumeroToken,
+                        NombreToken = item.NombreToken,
+                        SinonimoToken = item.SinonimoToken,
+                        LexemaToken = lexema
+                    };
+                    //guardar el la lista_tokens_reconocidos
+                    list_tokens_reconocidos.Add(token);
                 }
             }
-            return token;
         }
+
     }
 }

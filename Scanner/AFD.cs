@@ -6,23 +6,18 @@ namespace Compilador2020.Scanner
 {
     public class AFD
     {
-        private int estadoInicial;
-        private String leyendo;
-        private int estadoFinal;
-
-        public AFD(int estadoInicial, string leyendo, int estadoFinal)
-        {
-            this.estadoInicial = estadoInicial;
-            this.leyendo = leyendo;
-            this.estadoFinal = estadoFinal;
-        }
+        private int estado;
+        private string leyendo;
+        private int nEstado;
+        private string lee;
 
         public AFD()
         {
         }
 
-        public int EstadoInicial { get => estadoInicial; set => estadoInicial = value; }
+        public int Estado { get => estado; set => estado = value; }
         public string Leyendo { get => leyendo; set => leyendo = value; }
-        public int EstadoFinal { get => estadoFinal; set => estadoFinal = value; }
+        public int NEstado { get => nEstado; set => nEstado = value; }
+        public string Lee { get => lee; set => lee = value; }
     }
 }

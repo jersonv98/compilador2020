@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Compilador2020"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FFC5C5C5">
+        Title="Compilador 2020" Height="450" Width="800" Icon="/csharp_original_logo_icon_146578.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/1516578954.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Ellipse HorizontalAlignment="Left" Height="76" Margin="10,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="78" Cursor="ArrowCD">
             <Ellipse.Fill>
                 <ImageBrush ImageSource="/unnamed.png"/>
@@ -15,39 +18,103 @@
         <TextBlock HorizontalAlignment="Left" Margin="104,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="91" Width="476" TextAlignment="Center" FontSize="22" FontWeight="Bold" FontStyle="Normal"><Run Text="Universidad T"/><Run Language="es-es" Text="écnica del Norte"/><LineBreak/><Run Language="es-es" Text="Facultad de Ingeniería en Ciencias Aplicadas"/><LineBreak/><Run Language="es-es" Text="COMPILADOR 2020"/></TextBlock>
         <Image HorizontalAlignment="Left" Height="54" Margin="597,30,0,0" VerticalAlignment="Top" Width="178" Source="/Vive.png"/>
         <TabControl x:Name="TabLexico" Margin="153,106,10,10">
-            <TabItem x:Name="tabItemAlfabeto" Header="ALFABETO">
-                <Grid x:Name="gridAlfabeto" Background="#FFE5E5E5">
+            <TabItem x:Name="tabItemAlfabeto" Header="Alfabeto">
+                <Grid x:Name="gridAlfabeto">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg" Stretch="UniformToFill"/>
+                    </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tbl_Alfabeto" Margin="106,10,107,10" Grid.Column="1" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Grid.ColumnSpan="1"/>
+                    <DataGrid x:Name="tbl_Alfabeto" Margin="95,10,93,10" Grid.Column="1" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Grid.ColumnSpan="1" BorderBrush="Black" BorderThickness="3,3,3,3"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabItemAFD" Header="AFD">
-                <Grid x:Name="gridAFD" Background="#FFE5E5E5">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FFE5E5E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid x:Name="gridAFD">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg" Stretch="UniformToFill"/>
+                    </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tbl_AFD" Grid.ColumnSpan="2" Margin="222,10,222,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" MaxColumnWidth="50"/>
+                    <DataGrid x:Name="tbl_AFD" Grid.ColumnSpan="2" Margin="222,10,222,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" MaxColumnWidth="50" BorderBrush="Black" BorderThickness="3,3,3,3"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="tabItemTokensReconocidos" Header="Tokens Reconocidos">
-                <Grid x:Name="gridTokensReconocidos" Background="#FFE5E5E5">
+            <TabItem x:Name="tabItemTokensReconocidos" Header="Tokens Reconocidos" BorderThickness="0,0,0,0">
+                <TabItem.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFACACAC" Offset="0"/>
+                    </LinearGradientBrush>
+                </TabItem.BorderBrush>
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FFE5E5E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid x:Name="gridTokensReconocidos">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg" Stretch="UniformToFill"/>
+                    </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tbl_TokensReconocidos" Grid.ColumnSpan="2" Margin="203,10,10,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" MaxColumnWidth="50"/>
-                    <TextBox x:Name="TextBoxEjemplo" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Height="210"/>
-                    <Button x:Name="Btn_Analizar" Content="Analizar" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="42,234,0,0" VerticalAlignment="Top" Height="27" Width="114" Background="#FFE8ABAB" FontFamily="New Gulim" FontSize="14"/>
+                    <DataGrid x:Name="tbl_TokensReconocidos" Grid.ColumnSpan="2" Margin="120,10,123,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" BorderThickness="3,3,3,3" BorderBrush="Black"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabItemMovimientos" Header="Movimientos">
+                <Grid x:Name="gridMovimientos">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg" Stretch="UniformToFill"/>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="615*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="tbl_Movimientos" Margin="292,10,10,116" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" BorderBrush="Black" BorderThickness="3,3,3,3" Grid.Column="2"/>
+                    <TextBox x:Name="TextBoxEjemplo" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" Height="164" BorderBrush="Black" BorderThickness="1,1,1,1" VerticalScrollBarVisibility="Visible" IsReadOnly="True" IsUndoEnabled="False"/>
+                    <DataGrid x:Name="tbl_Errores" Grid.Column="2" Margin="35,179,10,10" Background="White" Foreground="Red" BorderBrush="Black" OpacityMask="Black" CanUserAddRows="False" RowBackground="Black" BorderThickness="3,3,3,3"/>
+                    <Label Content="&gt;&gt;&gt;" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="0,203,0,0" VerticalAlignment="Top" Width="46" Height="32" FontWeight="UltraBold" FontSize="16" Foreground="Red"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabItemTDS" Header="TDS">
+                <Grid x:Name="gridTDS">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg" Stretch="UniformToFill"/>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="tbl_TDS" Grid.ColumnSpan="2" Margin="168,10,167,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" BorderBrush="Black" BorderThickness="3,3,3,3"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="BtnSintactico" Content="Sintáctico" HorizontalAlignment="Left" Height="44" Margin="24,240,0,0" VerticalAlignment="Top" Width="109" IsEnabled="False" FontFamily="Segoe Script" FontSize="16" Background="#FF868686"/>
-        <Button x:Name="BtnSemantico" Content="Semántico" HorizontalAlignment="Left" Height="44" Margin="24,310,0,0" VerticalAlignment="Top" Width="109" FontFamily="Segoe Script" FontSize="16" IsEnabled="False" Background="#FF8686DD"/>
-        <Button x:Name="BtnLexico" Content="Léxico" HorizontalAlignment="Left" Height="44" Margin="24,174,0,0" VerticalAlignment="Top" Width="109" FontFamily="Segoe Script" FontSize="16" Background="#FFB2D09A" Click="BtnLexico_Click"/>
-
+        <Button x:Name="BtnSintactico" Content="Sintáctico" HorizontalAlignment="Left" Height="44" Margin="24,240,0,0" VerticalAlignment="Top" Width="109" FontFamily="Segoe Script" FontSize="16" BorderBrush="Black" BorderThickness="0,0,0,0" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="/button_blank_blue_14984.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnSemantico" Content="Semántico" HorizontalAlignment="Left" Height="44" Margin="24,310,0,0" VerticalAlignment="Top" Width="109" FontFamily="Segoe Script" FontSize="16" IsEnabled="False" BorderThickness="0,0,0,0" BorderBrush="Black">
+            <Button.Background>
+                <ImageBrush ImageSource="/button_blank_green_14986.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnLexico" Content="Léxico" HorizontalAlignment="Left" Height="44" Margin="24,174,0,0" VerticalAlignment="Top" Width="109" FontFamily="Segoe Script" FontSize="16" Click="BtnLexico_Click" BorderThickness="0,0,0,0" BorderBrush="Black" IsCancel="True" Cursor="">
+            <Button.Background>
+                <ImageBrush ImageSource="/button_blank_yellow_14988.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
