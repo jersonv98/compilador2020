@@ -1,25 +1,49 @@
-
+\*Este es un comentario*\
+"As*"asas2"
+'q'2'
+"a-12M"
+'Aas12**'
+-15
+-2.33
+3232
+02.1
+00
+if
+00005
+do
+01
+02
+120
+00120
+for
+01010
+0202
+13000
+100001
+100
 Nalfabeto 
-iff for do 
+iffff for do 
 Total_10         +                 -          / 
 
+  < > <= >= ==   -1.5  -0.2
 
-
-**  <\*Comenta r io12#3*\ 
+**  <*Comenta r io12#3*\ 
 && & | || 
 Numerocuenta != true false int   float  char
 text    main    [ ]
 while   loop getElement      document
 
 continue
-
+   false ;
 ,
 
-do          : var       break
+do          : var       break }
 
-
+  int float
 "qweqw# 1 23123"
 1234
-1.23
+1.23    bool boool  main sdswdwedadwe
+
+{ for ++
 
 'q'

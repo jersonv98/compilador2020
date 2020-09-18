@@ -46,3 +46,4 @@ LENGUAJE PARECIDO A JAVASCRIPT
 [43, z, literalentero, digito+]
 [44, y, literalreal, -digito+.digito+|digito*.digito+]
 [45, u, literalchar, '(letra|digito|simbolos|mayuscula)+']
+comentario \{por}({letra}|{digito}|{simbolos}|{mayuscula})+{por}\# 

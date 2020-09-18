@@ -23,7 +23,7 @@
 		<estado>12</estado>
 		<lee>#</lee>
 		<nestado>-1</nestado>
-	</movimiento>	
+	</movimiento>
 	<movimiento>
 		<estado>0</estado>
 		<lee>+</lee>
@@ -34,7 +34,7 @@
 		<lee>#</lee>
 		<nestado>-2</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>0</estado>
 		<lee>-</lee>
 		<nestado>17</nestado>
@@ -201,7 +201,7 @@
 	</movimiento>
 	<movimiento>
 		<estado>4</estado>
-		<lee>a </lee>
+		<lee>a</lee>
 		<nestado>41</nestado>
 	</movimiento>
 	<movimiento>
@@ -225,7 +225,7 @@
 		<nestado>-16</nestado>
 	</movimiento>
 	<movimiento>
-	    <estado>6</estado>
+		<estado>6</estado>
 		<lee>n</lee>
 		<nestado>46</nestado>
 	</movimiento>
@@ -319,7 +319,7 @@
 		<lee>t</lee>
 		<nestado>9</nestado>
 	</movimiento>
-    <movimiento>
+	<movimiento>
 		<estado>9</estado>
 		<lee>e</lee>
 		<nestado>49</nestado>
@@ -329,7 +329,7 @@
 		<lee>x</lee>
 		<nestado>100</nestado>
 	</movimiento>
-    <movimiento>
+	<movimiento>
 		<estado>100</estado>
 		<lee>t</lee>
 		<nestado>127</nestado>
@@ -344,7 +344,7 @@
 		<lee>m</lee>
 		<nestado>8</nestado>
 	</movimiento>
-    <movimiento>
+	<movimiento>
 		<estado>8</estado>
 		<lee>a</lee>
 		<nestado>48</nestado>
@@ -379,7 +379,7 @@
 		<lee>}</lee>
 		<nestado>28</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>28</estado>
 		<lee>#</lee>
 		<nestado>-24</nestado>
@@ -429,7 +429,7 @@
 		<lee>e</lee>
 		<nestado>146</nestado>
 	</movimiento>
-    <movimiento>
+	<movimiento>
 		<estado>146</estado>
 		<lee>#</lee>
 		<nestado>-27</nestado>
@@ -449,12 +449,12 @@
 		<lee>o</lee>
 		<nestado>98</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>98</estado>
 		<lee>p</lee>
 		<nestado>125</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>125</estado>
 		<lee>#</lee>
 		<nestado>-28</nestado>
@@ -494,7 +494,7 @@
 		<lee>e</lee>
 		<nestado>44</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>44</estado>
 		<lee>t</lee>
 		<nestado>95</nestado>
@@ -509,7 +509,7 @@
 		<lee>l</lee>
 		<nestado>141</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>141</estado>
 		<lee>e</lee>
 		<nestado>153</nestado>
@@ -579,7 +579,7 @@
 		<lee>o</lee>
 		<nestado>39</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>39</estado>
 		<lee>n</lee>
 		<nestado>89</nestado>
@@ -599,7 +599,7 @@
 		<lee>n</lee>
 		<nestado>149</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>149</estado>
 		<lee>u</lee>
 		<nestado>156</nestado>
@@ -639,7 +639,7 @@
 		<lee>)</lee>
 		<nestado>23</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>23</estado>
 		<lee>#</lee>
 		<nestado>-36</nestado>
@@ -649,7 +649,7 @@
 		<lee>;</lee>
 		<nestado>25</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>25</estado>
 		<lee>#</lee>
 		<nestado>-37</nestado>
@@ -684,7 +684,7 @@
 		<lee>v</lee>
 		<nestado>10</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>10</estado>
 		<lee>a</lee>
 		<nestado>51</nestado>
@@ -729,9 +729,9 @@
 		<lee>"</lee>
 		<nestado>15</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>15</estado>
-		<lee>letra </lee>
+		<lee>letra</lee>
 		<nestado>55</nestado>
 	</movimiento>
 	<movimiento>
@@ -1154,6 +1154,128 @@
 		<lee>'</lee>
 		<nestado>83</nestado>
 	</movimiento>
+
+
+	<movimiento>
+		<estado>83</estado>
+		<lee>letra</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>mayuscula</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>digito</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>+</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>-</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>*</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>/</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>&amp;</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>(</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>)</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>,</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>.</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>{</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>}</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>!</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>#</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>$</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>%</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>&lt;</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>&gt;</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>_</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>=</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>:</lee>
+		<nestado>83</nestado>
+	</movimiento>
+	<movimiento>
+		<estado>83</estado>
+		<lee>?</lee>
+		<nestado>83</nestado>
+	</movimiento>
 	<movimiento>
 		<estado>83</estado>
 		<lee>'</lee>
@@ -1428,13 +1550,13 @@
 		<estado>113</estado>
 		<lee>*</lee>
 		<nestado>133</nestado>
-	</movimiento>	
+	</movimiento>
 	<movimiento>
 		<estado>133</estado>
 		<lee>\</lee>
 		<nestado>114</nestado>
 	</movimiento>
-		<movimiento>
+	<movimiento>
 		<estado>114</estado>
 		<lee>#</lee>
 		<nestado>-100</nestado>

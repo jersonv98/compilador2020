@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Compilador2020.Scanner
@@ -17,6 +18,7 @@ namespace Compilador2020.Scanner
         public List<Tokens> list_tokens_reconocidos;
         public static List<Errores> listErrores = new List<Errores>();
         public string text_file_name;
+        int aux = 0;
 
         public Lexico()
         {
@@ -38,7 +40,7 @@ namespace Compilador2020.Scanner
         public List<Tokens> Cargar_Alfabeto(DataGrid Tabla)
         {
             Tabla.ItemsSource = CargarXML("alfabeto.xml");
-            int filas = Tabla.Items.Count - 1;
+            int filas = Tabla.Items.Count;
             Tokens token;
             listAlfabeto = new List<Tokens>();
             for (int i = 0; i < filas; i++)
@@ -59,7 +61,7 @@ namespace Compilador2020.Scanner
         public List<AFD> Cargar_AFD(DataGrid Tabla)
         {
             Tabla.ItemsSource = CargarXML("AFD.xml");
-            int filas = Tabla.Items.Count - 1;
+            int filas = Tabla.Items.Count;
             AFD afd;
             listAFD = new List<AFD>();
             for (int i = 0; i < filas; i++)
@@ -69,7 +71,6 @@ namespace Compilador2020.Scanner
                     Estado = int.Parse((Tabla.Items[i] as DataRowView).Row.ItemArray[0] + ""),
                     Leyendo = (string)(Tabla.Items[i] as DataRowView).Row.ItemArray[1],
                     NEstado = int.Parse((Tabla.Items[i] as DataRowView).Row.ItemArray[2] + "")
-
                 };
                 listAFD.Add(afd);
             }
@@ -110,7 +111,7 @@ namespace Compilador2020.Scanner
         {
             listMovimientos = new List<AFD>();
             list_tokens_reconocidos = new List<Tokens>();
-            //listErrores = new List<Errores>();
+            listErrores = new List<Errores>();
             listTDS = new List<TDS>();
             int estado = 0, newestado = 0, nidentificador = 0;
             char simbolo;
@@ -118,7 +119,7 @@ namespace Compilador2020.Scanner
 
             //Formateando el texto de entrada, tomar en cuenta que al quitar el blando dentro de lo que este en comillas se pondra como #
             //Hacer un replace siempre y cuando no este entre comillas
-            text_file_name = text_file_name.Replace('\n', '#').Replace('\t', '#').Replace('\r', '#').Replace(' ', '#');
+            text_file_name = text_file_name.Replace('\n', '#').Replace('\t', '#').Replace('\r', '#').Replace(' ', '#')+ '#';
             char[] palabras = text_file_name.ToCharArray();
 
             int j = 0;
@@ -138,8 +139,32 @@ namespace Compilador2020.Scanner
                     if (newestado < 0)
                     {
                         afd.Lee = "Token reconocido " + (-newestado);
+                        aux = 0;
                     }
                     listMovimientos.Add(afd);
+                }
+                if (newestado == 997)
+                {
+                    Errores miError = new Errores()
+                    {
+                        NumError = 3,
+                        MensajeError = "Error léxico: simbolo " +  simbolo + " no reconocido en el lexema " + lexema
+                    };
+                    listErrores.Add(miError);
+                    estado = 0;
+                    lexema = "";
+                    j++;
+                    aux = 0;
+                    while (true)
+                    {
+                        if (palabras[j] != '#')
+                        {
+                            j++;
+                            continue;
+                        }
+                        break;
+                    }
+                    continue;
                 }
                 if (newestado == 998)
                 {
@@ -206,7 +231,7 @@ namespace Compilador2020.Scanner
             }
         }
 
-        private static int Movimiento_AFD(int estado, char simbolo)
+        private int Movimiento_AFD(int estado, char simbolo)
         {
             int caso = 0;
             if (char.IsLetter(simbolo))
@@ -221,16 +246,35 @@ namespace Compilador2020.Scanner
             }
             else if (char.IsDigit(simbolo))
             {
-                //caso digito
-                caso = 3;
+                // caso digito
+                if (aux == 0)
+                {
+                    caso = 3;
+                    if (simbolo == '0' && aux == 0)
+                    {
+                        aux = 2;
+                    }
+                    else
+                    {
+                        aux = 1;
+                    }
+                }
+                else if (simbolo == '0' && aux == 2 || !(simbolo == '0') && aux == 2)
+                {
+                    return 997;
+                }
+                else if (aux == 1)
+                {
+                    caso = 3;
+                }
             }
             else
             {
                 //validar que el simbolo exista en nuestro alfabeto
                 //caso ha sido otro caracter
-                string simbolos = "!#$%&|<>_=:,?'+-/*().{}";
+                string simbolos = "!#$%&|'_<>=:,\"?+-/*().{};\\";
                 string simboloString = simbolo.ToString();
-                if (!simbolos.Contains(simboloString))
+                if (!(simbolos.Contains(simboloString) || simbolo.Equals('\"') || simbolo.Equals('\'')))
                 {
                     Errores miError = new Errores()
                     {
