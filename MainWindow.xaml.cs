@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,30 +31,6 @@ namespace Compilador2020
             lexico.Cargar_Alfabeto(tbl_Alfabeto);
             //cargar AFDA en mi tabla AFD
             lexico.Cargar_AFD(tbl_AFD);
-            //ejecutar el metodo reconocedor lexico
-            lexico.Reconocedor_Lexico();
-            //reconocer tokens y mostrarlos en pantalla
-            tbl_TokensReconocidos.ItemsSource = lexico.list_tokens_reconocidos;
-            BtnSintactico.IsEnabled = true;
-            //mostrar movimientos en pantalla
-            tbl_Movimientos.ItemsSource = lexico.listMovimientos;
-            //mostrar tabla de simbolos en pantalla
-            tbl_TDS.ItemsSource = lexico.listTDS;
-            //mostrar errores
-            lexico.Cargar_Errores(tbl_Errores);
-            //mostrar texto ejemplo en una caja de texto
-            TextBoxEjemplo.Text = lexico.Cargar_Archivo_Fuente();
-        }
-
-        Lexico lexico = new Lexico();
-
-        private void BtnLexico_Click(object sender, RoutedEventArgs e)
-        {
-            
-            ////cargar alfabeto en mi tabla alfabeto
-            //lexico.Cargar_Alfabeto(tbl_Alfabeto);
-            ////cargar AFDA en mi tabla AFD
-            //lexico.Cargar_AFD(tbl_AFD);
             ////ejecutar el metodo reconocedor lexico
             //lexico.Reconocedor_Lexico();
             ////reconocer tokens y mostrarlos en pantalla
@@ -67,6 +44,33 @@ namespace Compilador2020
             //lexico.Cargar_Errores(tbl_Errores);
             ////mostrar texto ejemplo en una caja de texto
             //TextBoxEjemplo.Text = lexico.Cargar_Archivo_Fuente();
+        }
+
+        Lexico lexico = new Lexico();
+
+        private void Btn_Lexico_Click(object sender, RoutedEventArgs e)
+        {
+            ////cargar alfabeto en mi tabla alfabeto
+            //lexico.Cargar_Alfabeto(tbl_Alfabeto);
+            ////cargar AFDA en mi tabla AFD
+            //lexico.Cargar_AFD(tbl_AFD);
+            //ejecutar el metodo reconocedor lexico
+            lexico.Reconocedor_Lexico();
+            //reconocer tokens y mostrarlos en pantalla
+            tbl_TokensReconocidos.ItemsSource = lexico.list_tokens_reconocidos;
+            BtnSintactico.IsEnabled = true;
+            MessageBox.Show("El Parser se encuentra habilitado", "Compilador", MessageBoxButton.OK, MessageBoxImage.Information);
+            tabItemTokensReconocidos.IsEnabled = true;
+            tabItemMovimientos.IsEnabled = true;
+            tabItemTDS.IsEnabled = true;
+            //mostrar movimientos en pantalla
+            tbl_Movimientos.ItemsSource = lexico.listMovimientos;
+            //mostrar tabla de simbolos en pantalla
+            tbl_TDS.ItemsSource = lexico.listTDS;
+            //mostrar errores
+            lexico.Cargar_Errores(tbl_Errores);
+            //mostrar texto ejemplo en una caja de texto
+            TextBoxEjemplo.Text = lexico.Cargar_Archivo_Fuente();
         }
     }
 }

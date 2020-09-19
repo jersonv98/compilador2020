@@ -10,15 +10,28 @@
   <ItemGroup>
     <None Remove="1486486316-arrow-film-movie-play-player-start-video_81236.png" />
     <None Remove="1516578954.jpg" />
+    <None Remove="69539.png" />
     <None Remove="button_blank_blue_14984.png" />
     <None Remove="button_blank_green_14986.png" />
     <None Remove="button_blank_yellow_14988.png" />
+    <None Remove="Button_Play-01_25091.png" />
+    <None Remove="calculator_icon-icons.com_53152.png" />
     <None Remove="csharp_original_logo_icon_146578.png" />
     <None Remove="delete_icon-icons.com_52378.png" />
     <None Remove="device-keyboard-add-circle.png" />
+    <None Remove="enter_icon-icons.com_71207.png" />
+    <None Remove="file_type_csharp_icon_130664.png" />
+    <None Remove="graph_icon-icons.com_53132.png" />
     <None Remove="kisspng-c-programming-language-logo-microsoft-visual-stud-atlas-portfolio-5b89919299aab1.1956912415357423546294.jpg" />
     <None Remove="Logo.png" />
     <None Remove="Logo_principal.jpg" />
+    <None Remove="merkletreesdiagramchartflowchartprocess_95911.png" />
+    <None Remove="music_player_play_icon_123828.png" />
+    <None Remove="Play256_25038.png" />
+    <None Remove="receipt_icon-icons.com_53124.png" />
+    <None Remove="scanner_theapplication_3382.png" />
+    <None Remove="social_media_corporate_logo_youtube_play_icon-icons.com_67709.png" />
+    <None Remove="textxscript_92732.png" />
     <None Remove="unnamed.png" />
     <None Remove="Vive.png" />
   </ItemGroup>
@@ -26,14 +39,27 @@
   <ItemGroup>
     <Resource Include="1486486316-arrow-film-movie-play-player-start-video_81236.png" />
     <Resource Include="1516578954.jpg" />
+    <Resource Include="69539.png" />
     <Resource Include="button_blank_blue_14984.png" />
     <Resource Include="button_blank_green_14986.png" />
     <Resource Include="button_blank_yellow_14988.png" />
+    <Resource Include="Button_Play-01_25091.png" />
+    <Resource Include="calculator_icon-icons.com_53152.png" />
     <Resource Include="csharp_original_logo_icon_146578.png" />
     <Resource Include="delete_icon-icons.com_52378.png" />
+    <Resource Include="enter_icon-icons.com_71207.png" />
+    <Resource Include="file_type_csharp_icon_130664.png" />
+    <Resource Include="graph_icon-icons.com_53132.png" />
     <Resource Include="kisspng-c-programming-language-logo-microsoft-visual-stud-atlas-portfolio-5b89919299aab1.1956912415357423546294.jpg" />
     <Resource Include="Logo.png" />
     <Resource Include="Logo_principal.jpg" />
+    <Resource Include="merkletreesdiagramchartflowchartprocess_95911.png" />
+    <Resource Include="music_player_play_icon_123828.png" />
+    <Resource Include="Play256_25038.png" />
+    <Resource Include="receipt_icon-icons.com_53124.png" />
+    <Resource Include="scanner_theapplication_3382.png" />
+    <Resource Include="social_media_corporate_logo_youtube_play_icon-icons.com_67709.png" />
+    <Resource Include="textxscript_92732.png" />
     <Resource Include="unnamed.png" />
     <Resource Include="Vive.png" />
   </ItemGroup>

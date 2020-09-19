@@ -89,22 +89,9 @@ namespace Compilador2020.Scanner
         public string Cargar_Archivo_Fuente()
         {
             string ruta_file = Path.GetFullPath("../../../Scanner/FilesLexico");
-            text_file_name = File.ReadAllText(ruta_file + "\\archivo.txt");
+            text_file_name = File.ReadAllText(ruta_file + "\\ArchivoPruebaSinErrores.txt");
             return text_file_name;
         }
-        //public void Cargar_Archivo_Fuente()
-        //{
-        //    string ruta_file = Path.GetFullPath("../../../Scanner/FilesLexico");
-        //    // Subir a una estructura para ir leyendo caracter por caracter
-        //    text_file_name = CodigoFuente(ruta_file);
-        //}
-
-        //static string CodigoFuente(string ruta)
-        //{
-        //    string path = ruta + \\archivo.txt"";
-        //    string texto_archivo = File.ReadAllText(path);
-        //    return texto_archivo;
-        //}
 
         //Funciones de movimientos
         public void Reconocedor_Lexico()

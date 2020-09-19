@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Compilador2020"
         mc:Ignorable="d"
-        Title="Compilador 2020" Height="450" Width="800" Background="{x:Null}" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Logo.png" WindowStyle="None" AllowsTransparency="True">
+        Title="Compilador 2020" Height="450" Width="800" Background="{x:Null}" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/csharp_original_logo_icon_146578.png" WindowStyle="None" AllowsTransparency="True">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -18,7 +18,7 @@
         </Style>
         <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="Transparent"/>
         <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
         <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
         <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
@@ -26,7 +26,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
         <Style x:Key="btnSPortada" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
@@ -45,16 +45,13 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF012431" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
@@ -75,41 +72,45 @@
                 <ImageBrush ImageSource="/Logo_principal.jpg" Stretch="UniformToFill"/>
             </Ellipse.Fill>
         </Ellipse>
-        <TextBlock x:Name="lnlTitulo" HorizontalAlignment="Left" Margin="52,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Open Sans" FontWeight="Bold" FontSize="36" Grid.Column="1" Height="36" Width="342">
+        <TextBlock x:Name="lnlTitulo" HorizontalAlignment="Left" Margin="168,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Open Sans" FontWeight="Bold" FontSize="48" Grid.Column="1" Height="77" Width="104">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFFF4242" Offset="0"/>
                 </LinearGradientBrush>
-            </TextBlock.Foreground><Run Text="COMPILADOR"/><Run Language="es-es" Text=" 2020"/></TextBlock>
-        <TextBlock x:Name="lblEst2" HorizontalAlignment="Left" Margin="40,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="20" Grid.Column="1" AutomationProperties.HelpText="Estudiante 7mo CISIC" Height="30" Width="152" FontWeight="Bold" FontStyle="Italic">
+            </TextBlock.Foreground><Run Language="es-es" Text="UTN"/></TextBlock>
+        <TextBlock x:Name="lblEst2" HorizontalAlignment="Left" Margin="148,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="20" Grid.Column="1" AutomationProperties.HelpText="Estudiante 7mo CISIC" Height="30" Width="152" FontWeight="Bold" FontStyle="Italic">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFF0E5D0" Offset="0"/>
                 </LinearGradientBrush>
             </TextBlock.Foreground><Run Language="es-es" Text="Vásquez Jerson"/></TextBlock>
-        <TextBlock x:Name="lblEst1" HorizontalAlignment="Left" Margin="296,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="20" Grid.Column="1" AutomationProperties.HelpText="Estudiante 7mo CISIC" Grid.ColumnSpan="2" Height="28" Width="175" FontWeight="Bold" FontStyle="Italic">
+        <TextBlock x:Name="lblEst1" HorizontalAlignment="Left" Margin="163,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="20" Grid.Column="1" AutomationProperties.HelpText="Estudiante 7mo CISIC" Height="28" Width="122" FontWeight="Bold" FontStyle="Italic">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFF0E5D0" Offset="0"/>
                 </LinearGradientBrush>
             </TextBlock.Foreground><Run Language="es-es" Text="Torres Irwin"/></TextBlock>
-        <Button x:Name="btnIniciar" Content="" HorizontalAlignment="Left" Height="78" Margin="107,329,0,0" VerticalAlignment="Top" Width="85" BorderBrush="{x:Null}" FontFamily="Arial Rounded MT Bold" Foreground="#FFE3E3E3" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Grid.Column="1" Cursor="Hand" Click="Inicio_click" FontSize="16">
+        <Button Content="Inicio" Grid.Column="1" HorizontalAlignment="Left" Margin="181,0,0,0" VerticalAlignment="Center" Width="84" Height="84" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Click="Button_Click" Focusable="False" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Cursor="Hand" FontSize="22" FontFamily="MV Boli" FontWeight="Bold" Foreground="White">
             <Button.Background>
-                <ImageBrush ImageSource="/1486486316-arrow-film-movie-play-player-start-video_81236.png"/>
+                <ImageBrush ImageSource="/button_blank_green_14986.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnSalir" Content="" HorizontalAlignment="Left" Height="78" Margin="257,326,0,0" VerticalAlignment="Top" Width="78" BorderBrush="{x:Null}" FontFamily="Arial Rounded MT Bold" Foreground="#FFE3E3E3" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Grid.Column="1" Cursor="Hand" Click="Salir_click" FontSize="16">
-            <Button.Background>
-                <ImageBrush ImageSource="/delete_icon-icons.com_52378.png"/>
-            </Button.Background>
-        </Button>
-        <Ellipse Grid.Column="1" HorizontalAlignment="Left" Height="94" Margin="171,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="104">
-            <Ellipse.Fill>
-                <ImageBrush ImageSource="/csharp_original_logo_icon_146578.png"/>
-            </Ellipse.Fill>
-        </Ellipse>
+        <TextBlock x:Name="lnlTitulo_Copy" HorizontalAlignment="Left" Margin="56,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Open Sans" FontWeight="Bold" FontSize="36" Grid.Column="1" Height="36" Width="78">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF858585" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground><Run Language="es-es" Text="FICA"/></TextBlock>
+        <TextBlock x:Name="lnlTitulo_Copy1" HorizontalAlignment="Left" Margin="305,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Open Sans" FontWeight="Bold" FontSize="36" Grid.Column="1" Height="36" Width="108">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF858585" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground><Run Language="es-es" Text="CISIC"/><LineBreak/><Run Language="es-es"/></TextBlock>
     </Grid>
 </Window>

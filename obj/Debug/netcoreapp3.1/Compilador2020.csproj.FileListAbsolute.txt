@@ -18,4 +18,3 @@ C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Comp
 C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Compilador2020.genruntimeconfig.cache
 C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Principal.g.cs
 C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Principal.baml
-C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Compilador2020.csprojAssemblyReference.cache

@@ -22,16 +22,16 @@ namespace Compilador2020
             InitializeComponent();
         }
 
-        private void Inicio_click(object sender, RoutedEventArgs e)
+        private void Salir_click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
             MainWindow mw = new MainWindow();
             mw.ShowDialog();
-        }
-
-        private void Salir_click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
     }
 }
