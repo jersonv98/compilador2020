@@ -83,13 +83,16 @@ namespace Compilador2020.Scanner
             Datos.ItemsSource = listErrores;
         }
 
-
+        public void Cargar_Tokens_Reconocidos(DataGrid Datos)
+        {
+            Datos.ItemsSource = list_tokens_reconocidos;
+        }
 
         // Funcion que carga el archivo fuente a compilar
         public string Cargar_Archivo_Fuente()
         {
             string ruta_file = Path.GetFullPath("../../../Scanner/FilesLexico");
-            text_file_name = File.ReadAllText(ruta_file + "\\ArchivoPruebaSinErrores.txt");
+            text_file_name = File.ReadAllText(ruta_file + "\\EstiloPrograma.txt");
             return text_file_name;
         }
 
@@ -103,6 +106,7 @@ namespace Compilador2020.Scanner
             int estado = 0, newestado = 0, nidentificador = 0;
             char simbolo;
             string lexema = null;
+            bool flag_main = false;
 
             //Formateando el texto de entrada, tomar en cuenta que al quitar el blando dentro de lo que este en comillas se pondra como #
             //Hacer un replace siempre y cuando no este entre comillas
@@ -190,10 +194,15 @@ namespace Compilador2020.Scanner
                     // reconocio un token
                     newestado = -newestado;
                     Buscar_Token(newestado, lexema);
-                    if (newestado == 1)
+                    if (newestado == 22) flag_main = true;
+                    //verificar si es que es un identificador
+                    if (newestado == 1 && !(flag_main))
                     {
                         //Quedarnos solo con 8 caracteres significativos
-                        lexema = lexema.Substring(0, 8);
+                        if (!(lexema.Length < 8))
+                        {
+                            lexema = lexema.Substring(0, 8);
+                        }
                         //Se reconoció un identificador, guardar en la tabla de simbolos
                         //almacenarlo en la TDS
                         TDS identificador = new TDS()
@@ -201,6 +210,8 @@ namespace Compilador2020.Scanner
                             Numero = nidentificador++,
                             Nombre = lexema
                         };
+                        //buscar identificador; si es que está mostrar un error
+
                         listTDS.Add(identificador);
                     }
                     estado = 0;
@@ -296,7 +307,7 @@ namespace Compilador2020.Scanner
 
         public void Buscar_Token(int numToken, string lexema)
         {
-            Tokens token; ;
+            Tokens token;
             foreach (Tokens item in listAlfabeto)
             {
                 if (item.NumeroToken == numToken)

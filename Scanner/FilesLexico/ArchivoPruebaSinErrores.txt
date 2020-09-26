@@ -1,31 +1,23 @@
 
 Nalfabeto
-"12asasKK{}"
+             "12asasKK{}"
 1212121212
 1.5
 'q'
-\*Este es un comentario *\
+
+\*Este es un comentario con simbolos ? $ fsdsd2313*\
 -1.5
 +
--
-*
-/
-**
-&&
-||
+     -   *
+/  **
+&& ||
 <
->
-==
-<=
->=
+> == <= >=
 != 
-true
-false
-int
+true    false     int
 float
 bool
-char
-text
+char           text
 main
 {
 }
@@ -35,9 +27,10 @@ while
 loop
 for
 ++
-getElement
-document
-continue
+
+
+     getElement    document
+    continue
 ,
 (
 )

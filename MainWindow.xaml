@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Compilador2020"
         mc:Ignorable="d"
-        Title="Compilador 2020" Height="450" Width="800" Icon="/csharp_original_logo_icon_146578.png" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        Title="Compilador 2020" Height="450" Width="800" Icon="/csharp_original_logo_icon_146578.png" WindowStyle="SingleBorderWindow" Closed="close_app" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -64,20 +64,22 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="41*"/>
-            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="563*"/>
+            <ColumnDefinition Width="144*"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="/1516578954.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Ellipse HorizontalAlignment="Left" Height="58" Margin="36,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="59" Cursor="ArrowCD">
+        <Ellipse HorizontalAlignment="Left" Height="58" Margin="21,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="59" Cursor="ArrowCD" Grid.Column="1" Grid.ColumnSpan="2">
             <Ellipse.Fill>
                 <ImageBrush ImageSource="/unnamed.png"/>
             </Ellipse.Fill>
         </Ellipse>
-        <TextBlock HorizontalAlignment="Left" Margin="106,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="509" TextAlignment="Center" FontSize="36" FontWeight="Normal" FontStyle="Normal" Text="COMPILADOR 2020" FontFamily="MV Boli" Foreground="#FF4B4848"/>
-        <Image HorizontalAlignment="Left" Height="44" Margin="601,17,0,0" VerticalAlignment="Top" Width="160" Source="/Vive.png" Grid.ColumnSpan="2"/>
-        <TabControl x:Name="TabLexico" Margin="10,84,19,10" Width="623">
+        <TextBlock HorizontalAlignment="Left" Margin="13,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="509" TextAlignment="Center" FontSize="36" FontWeight="Normal" FontStyle="Normal" Text="COMPILADOR 2020" FontFamily="MV Boli" Foreground="#FF4B4848" Grid.Column="2"/>
+        <Image HorizontalAlignment="Left" Height="44" Margin="508,17,0,0" VerticalAlignment="Top" Width="160" Source="/Vive.png" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <TabControl x:Name="TabLexico" Margin="12,84,21,10" Width="623" Grid.ColumnSpan="3" Visibility="Visible">
             <TabItem x:Name="tabItemAlfabeto" Header="Alfabeto">
                 <Grid x:Name="gridAlfabeto">
                     <Grid.Background>
@@ -203,23 +205,159 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="BtnSintactico" Content="" HorizontalAlignment="Left" Height="38" Margin="43,240,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" FontFamily="Segoe Script" FontSize="16" BorderThickness="0,0,0,0" IsEnabled="False" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Cursor="Hand" Grid.Column="1">
+        <Button x:Name="BtnSintactico" Content="" HorizontalAlignment="Left" Height="38" Margin="43,240,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" FontFamily="Segoe Script" FontSize="16" BorderThickness="0,0,0,0" IsEnabled="False" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Cursor="Hand" Grid.Column="3" Click="BtnSintactico_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/merkletreesdiagramchartflowchartprocess_95911.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnSemantico" Content="" HorizontalAlignment="Left" Height="38" Margin="43,331,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" FontFamily="Segoe Script" FontSize="16" BorderThickness="0,0,0,0" IsEnabled="False" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Cursor="Hand" Grid.Column="1">
+        <Button x:Name="BtnSemantico" Content="" HorizontalAlignment="Left" Height="38" Margin="43,331,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" FontFamily="Segoe Script" FontSize="16" BorderThickness="0,0,0,0" IsEnabled="False" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Cursor="Hand" Grid.Column="3">
             <Button.Background>
                 <ImageBrush ImageSource="/textxscript_92732.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="Btn_Lexico" Content="" HorizontalAlignment="Left" Margin="43,148,0,0" VerticalAlignment="Top" Height="38" Width="38" FontSize="16" FontFamily="Segoe Script" Click="Btn_Lexico_Click" BorderThickness="0,0,0,0" Focusable="False" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Cursor="Hand" Grid.Column="1" BorderBrush="Black">
+        <Button x:Name="Btn_Lexico" Content="" HorizontalAlignment="Left" Margin="43,148,0,0" VerticalAlignment="Top" Height="38" Width="38" FontSize="16" FontFamily="Segoe Script" Click="Btn_Lexico_Click" BorderThickness="0,0,0,0" Focusable="False" RenderTransformOrigin="1,0.5" Style="{DynamicResource btnSPortada}" Cursor="Hand" Grid.Column="3" BorderBrush="Black">
             <Button.Background>
                 <ImageBrush ImageSource="/scanner_theapplication_3382.png"/>
             </Button.Background>
         </Button>
-        <Label Content="Léxico&#xD;&#xA;" HorizontalAlignment="Left" Margin="33,181,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Normal" FontFamily="Segoe Script" FontSize="14" Height="28" Grid.Column="1"/>
-        <Label Content="Semántico&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="18,364,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Normal" FontFamily="Segoe Script" FontSize="14" Height="28" Grid.Column="1"/>
-        <Label Content="Sintáctico&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="19,273,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Normal" FontFamily="Segoe Script" FontSize="14" Height="28" Grid.Column="1"/>
+        <Label Content="Léxico&#xD;&#xA;" HorizontalAlignment="Left" Margin="33,181,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Normal" FontFamily="Segoe Script" FontSize="14" Height="28" Grid.Column="3"/>
+        <Label Content="Semántico&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="18,364,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Normal" FontFamily="Segoe Script" FontSize="14" Height="28" Grid.Column="3"/>
+        <Label Content="Sintáctico&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="19,273,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Normal" FontFamily="Segoe Script" FontSize="14" Height="28" Grid.Column="3"/>
+        <TabControl x:Name="TabControlSintactico" Margin="12,84,18,10" Grid.ColumnSpan="3" Visibility="Collapsed">
+            <TabItem x:Name="TabItemTokensReconocidos" Header="Tokens Reconocidos">
+                <Grid x:Name="GridTokensReconocidos">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_Tokens" Margin="10,10,10,10" Grid.ColumnSpan="1" BorderBrush="Black" BorderThickness="3,3,3,3" MinColumnWidth="142" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Numero del Token" Binding="{Binding NumeroToken}"/>
+                            <DataGridTextColumn Header="Sinonimo del Token" Binding="{Binding SinonimoToken}"/>
+                            <DataGridTextColumn Header="Nombre del Token" Binding="{Binding NombreToken}"/>
+                            <DataGridTextColumn Header="Lexema del Token" Binding="{Binding LexemaToken}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemGramaticaOriginal" Header="Gramática Original">
+                <Grid x:Name="GridGramaticaOriginal">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_GramaticaOriginal" Grid.ColumnSpan="2" Margin="10,10,10,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" BorderThickness="3,3,3,3" BorderBrush="Black" MinColumnWidth="142" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Numero de regla" Binding="{Binding rnum}"/>
+                            <DataGridTextColumn Header="Parte Izquierda" Binding="{Binding izq}"/>
+                            <DataGridTextColumn Header="Parte Derecha" Binding="{Binding der}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemGramaticaSinonimos" Header="Gramática en Sinónimos">
+                <Grid x:Name="GridGramaticaSinonimos">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_GramaticaEnSinonimoss" Grid.ColumnSpan="2" Margin="10,10,10,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" BorderThickness="3,3,3,3" BorderBrush="Black" MinColumnWidth="186" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Numero de regla" Binding="{Binding rnum}"/>
+                            <DataGridTextColumn Header="Parte Izquierda" Binding="{Binding izq}"/>
+                            <DataGridTextColumn Header="Parte Derecha" Binding="{Binding der}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemFirstNext" Header="First/Next">
+                <Grid x:Name="GridFirstNext">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_FirstNext" Grid.ColumnSpan="2" Margin="10,10,10,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" BorderThickness="3,3,3,3" BorderBrush="Black" MinColumnWidth="186" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="No Terminal" Binding="{Binding noTer}"/>
+                            <DataGridTextColumn Header="First" Binding="{Binding first}"/>
+                            <DataGridTextColumn Header="Next" Binding="{Binding next}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemMatrizTransicion" Header="Matriz de Transiciones">
+                <Grid x:Name="GridMatriz">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_SLR" Grid.ColumnSpan="2" Margin="10,10,10,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" BorderThickness="3,3,3,3" BorderBrush="Black" MinColumnWidth="186" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Estado" Binding="{Binding estado}"/>
+                            <DataGridTextColumn Header="Símbolo que lee" Binding="{Binding lee}"/>
+                            <DataGridTextColumn Header="Next" Binding="{Binding nestado}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemReglasReconocidas" Header="Reglas Reconocidas">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_ReglasReconocidas" Grid.ColumnSpan="2" Margin="10,10,10,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" BorderThickness="3,3,3,3" BorderBrush="Black" MinColumnWidth="186" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Numero de regla" Binding="{Binding NumeroRegla}"/>
+                            <DataGridTextColumn Header="Parte izquierda" Binding="{Binding ParteIzq}"/>
+                            <DataGridTextColumn Header="Parte derecha" Binding="{Binding ParteDer}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemMovimientos" Header="Movimientos">
+                <Grid x:Name="GridMovimmientos">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_Movimientos_SLR" Margin="10,10,10,118" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" BorderThickness="3,3,3,3" BorderBrush="Black" MinColumnWidth="186" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
+                            <DataGridTextColumn Header="Símbolo que lee" Binding="{Binding Lee}"/>
+                            <DataGridTextColumn Header="Next" Binding="{Binding NEstado}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="tbl_ErroresSintacticos" Margin="11,179,10,10" Background="White" Foreground="Red" BorderBrush="Black" OpacityMask="Black" CanUserAddRows="False" RowBackground="Black" BorderThickness="3,3,3,3" RenderTransformOrigin="0.5,0.5" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Numero de Error" Binding="{Binding NumError}"/>
+                            <DataGridTextColumn Header="Mensaje del Error" Binding="{Binding Mensaje}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemMatrizPilaSintactica" Header="Pila Sintáctica">
+                <Grid x:Name="GridPilaSintactica">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_PilaSintactica" Grid.ColumnSpan="2" Margin="10,10,10,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" BorderThickness="3,3,3,3" BorderBrush="Black" MinColumnWidth="186" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Pila Sintactica" Binding="{Binding PilaSintactica}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabItemTDSSintantico" Header="TDS">
+                <Grid x:Name="gridTDSSintantico">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/1516578954.jpg"/>
+                    </Grid.Background>
+                    <DataGrid x:Name="tbl_TDSSintactico" Grid.ColumnSpan="2" Margin="10,10,10,10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" BorderBrush="Black" BorderThickness="3,3,3,3" MinColumnWidth="117" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Numero del símbolo" Binding="{Binding Numero}"/>
+                            <DataGridTextColumn Header="Nombre del símbolo" Binding="{Binding Nombre}"/>
+                            <DataGridTextColumn Header="Tipo de símbolo" Binding="{Binding Tipo}"/>
+                            <DataGridTextColumn Header="Tamaño del símbolo" Binding="{Binding Size}"/>
+                            <DataGridTextColumn Header="Valor del símbolo" Binding="{Binding Valor}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

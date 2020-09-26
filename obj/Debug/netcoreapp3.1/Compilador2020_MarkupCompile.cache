@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\Jerson\Desktop\Compiladores\Compilador2020\App.xaml
-2-551189882
+4-693156381
 
-91208781346
-1921654412462
-MainWindow.xaml;Principal.xaml;
+17230836122
+2022071437820
+MainWindow.xaml;Parser\ParserWindow.xaml;Principal.xaml;Scanner\AFDWindow.xaml;
 
 False
 

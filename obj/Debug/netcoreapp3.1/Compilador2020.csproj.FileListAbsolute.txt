@@ -18,3 +18,12 @@ C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Comp
 C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Compilador2020.genruntimeconfig.cache
 C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Principal.g.cs
 C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Principal.baml
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Scanner\AFDWindow.g.cs
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\bin\Debug\netcoreapp3.1\Microsoft.Msagl.dll
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\bin\Debug\netcoreapp3.1\Microsoft.Msagl.Drawing.dll
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\bin\Debug\netcoreapp3.1\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Scanner\AFDWindow.baml
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Compilador2020.csproj.CopyComplete
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Parser\ParserWindow.g.cs
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Parser\ParserWindow.baml
+C:\Users\Jerson\Desktop\Compiladores\Compilador2020\obj\Debug\netcoreapp3.1\Compilador2020.csprojAssemblyReference.cache

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gramatica xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<noTerminales>
+		<noTer>P</noTer>
+		<noTer>D</noTer>
+		<noTer>U</noTer>
+		<noTer>C</noTer>
+		<noTer>L</noTer>
+		<noTer>N</noTer>
+		<noTer>H</noTer>
+		<noTer>I</noTer>
+		<noTer>X</noTer>
+		<noTer>Y</noTer>
+		<noTer>Q</noTer>
+		<noTer>W</noTer>
+		<noTer>S</noTer>
+		<noTer>M</noTer>
+		<noTer>O</noTer>
+		<noTer>V</noTer>
+		<noTer>R</noTer>
+		<noTer>G</noTer>
+		<noTer>A</noTer>
+		<noTer>Z</noTer>
+		<noTer>B</noTer>
+		<noTer>E</noTer>
+		<noTer>T</noTer>
+		<noTer>F</noTer>
+	</noTerminales>
+</gramatica>

@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <StartupObject></StartupObject>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,8 +28,16 @@
     <None Remove="Logo_principal.jpg" />
     <None Remove="merkletreesdiagramchartflowchartprocess_95911.png" />
     <None Remove="music_player_play_icon_123828.png" />
+    <None Remove="Parser\1516578954.jpg" />
+    <None Remove="Parser\csharp_original_logo_icon_146578.png" />
+    <None Remove="Parser\merkletreesdiagramchartflowchartprocess_95911.png" />
+    <None Remove="Parser\scanner_theapplication_3382.png" />
+    <None Remove="Parser\textxscript_92732.png" />
+    <None Remove="Parser\unnamed.png" />
+    <None Remove="Parser\Vive.png" />
     <None Remove="Play256_25038.png" />
     <None Remove="receipt_icon-icons.com_53124.png" />
+    <None Remove="Scanner\csharp_original_logo_icon_146578.png" />
     <None Remove="scanner_theapplication_3382.png" />
     <None Remove="social_media_corporate_logo_youtube_play_icon-icons.com_67709.png" />
     <None Remove="textxscript_92732.png" />
@@ -55,8 +64,16 @@
     <Resource Include="Logo_principal.jpg" />
     <Resource Include="merkletreesdiagramchartflowchartprocess_95911.png" />
     <Resource Include="music_player_play_icon_123828.png" />
+    <Resource Include="Parser\1516578954.jpg" />
+    <Resource Include="Parser\csharp_original_logo_icon_146578.png" />
+    <Resource Include="Parser\merkletreesdiagramchartflowchartprocess_95911.png" />
+    <Resource Include="Parser\scanner_theapplication_3382.png" />
+    <Resource Include="Parser\textxscript_92732.png" />
+    <Resource Include="Parser\unnamed.png" />
+    <Resource Include="Parser\Vive.png" />
     <Resource Include="Play256_25038.png" />
     <Resource Include="receipt_icon-icons.com_53124.png" />
+    <Resource Include="Scanner\csharp_original_logo_icon_146578.png" />
     <Resource Include="scanner_theapplication_3382.png" />
     <Resource Include="social_media_corporate_logo_youtube_play_icon-icons.com_67709.png" />
     <Resource Include="textxscript_92732.png" />
@@ -65,8 +82,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Parser\" />
     <Folder Include="Scanner\FilesLexico\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Msagl" Version="1.1.3" />
+    <PackageReference Include="Microsoft.Msagl.Drawing" Version="1.1.3" />
+    <PackageReference Include="Microsoft.Msagl.GraphViewerGDI" Version="1.1.3" />
   </ItemGroup>
 
 </Project>

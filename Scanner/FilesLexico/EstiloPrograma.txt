@@ -1,0 +1,22 @@
+var
+   int Total = 10 , Iq ;
+   char Simbolo = 'f' , Digito , Letra = 'a' ;
+   text Cadena ;
+   bool Flag ;
+main {
+    Total = Total + ( Total ** 2 ) - ( Total * 10 ) ;
+    Flag = true ;
+    while ( Flag ) {
+        Iq ++ ;
+        if ( Iq < 50 ) {
+             Flag = false ;
+             break ;
+        } ;
+    }
+    do {
+        Iq = 0 ;
+    } loop ( Total < 100 ) ;
+    for ( Iq = 0 ; Iq < 10 ; Iq ++ ) {
+        document ( Simbolo , Cadena ) ;
+    }
+}

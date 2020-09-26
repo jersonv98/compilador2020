@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gramatica xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<noTerminales>
+		<noTer>programa</noTer>
+		<noTer>declarar</noTer>
+		<noTer>undeclare</noTer>
+		<noTer>tipo</noTer>
+		<noTer>listavar</noTer>
+		<noTer>inicializa</noTer>
+		<noTer>literal</noTer>
+		<noTer>instrucciones</noTer>
+		<noTer>instruccion</noTer>
+		<noTer>if</noTer>
+		<noTer>else</noTer>
+		<noTer>while</noTer>
+		<noTer>for</noTer>
+		<noTer>incremento</noTer>
+		<noTer>doloop</noTer>
+		<noTer>escribir</noTer>
+		<noTer>leer</noTer>
+		<noTer>argumentos</noTer>
+		<noTer>asigna</noTer>
+		<noTer>condicion</noTer>
+		<noTer>operel</noTer>
+		<noTer>espresion</noTer>
+		<noTer>termino</noTer>
+		<noTer>factor</noTer>
+	</noTerminales>
+</gramatica>

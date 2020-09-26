@@ -1,0 +1,307 @@
+<reglas>
+	<regla>
+		<rnum>1</rnum>
+		<izq>programa</izq>
+		<der>var declarar main { instrucciones }</der>
+	</regla>
+	<regla>
+		<rnum>2</rnum>
+		<izq>declarar</izq>
+		<der>undeclare</der>
+	</regla>
+	<regla>
+		<rnum>3</rnum>
+		<izq>declarar</izq>
+		<der>undeclare declarar</der>
+	</regla>
+	<regla>
+		<rnum>4</rnum>
+		<izq>undeclare</izq>
+		<der>tipo listavar ;</der>
+	</regla>
+	<regla>
+		<rnum>5</rnum>
+		<izq>tipo</izq>
+		<der>int</der>
+	</regla>
+	<regla>
+		<rnum>6</rnum>
+		<izq>tipo</izq>
+		<der>float</der>
+	</regla>
+	<regla>
+		<rnum>7</rnum>
+		<izq>tipo</izq>
+		<der>char</der>
+	</regla>
+	<regla>
+		<rnum>8</rnum>
+		<izq>tipo</izq>
+		<der>text</der>
+	</regla>
+	<regla>
+		<rnum>9</rnum>
+		<izq>tipo</izq>
+		<der>bool</der>
+	</regla>
+	<regla>
+		<rnum>10</rnum>
+		<izq>listavar</izq>
+		<der>identificador inicializa , listavar</der>
+	</regla>
+	<regla>
+		<rnum>11</rnum>
+		<izq>listavar</izq>
+		<der>identificador , listavar</der>
+	</regla>
+	<regla>
+		<rnum>12</rnum>
+		<izq>listavar</izq>
+		<der>identificador inicializa </der>
+	</regla>
+	<regla>
+		<rnum>13</rnum>
+		<izq>listavar</izq>
+		<der>identificador </der>
+	</regla>
+	<regla>
+		<rnum>14</rnum>
+		<izq>inicializa</izq>
+		<der>= literal</der>
+	</regla>
+	<regla>
+		<rnum>15</rnum>
+		<izq>literal</izq>
+		<der>literalcadena </der>
+	</regla>
+	<regla>
+		<rnum>16</rnum>
+		<izq>literal</izq>
+		<der>literalentero </der>
+	</regla>
+	<regla>
+		<rnum>17</rnum>
+		<izq>literal</izq>
+		<der>literalreal </der>
+	</regla>
+	<regla>
+		<rnum>18</rnum>
+		<izq>literal</izq>
+		<der>literalchar</der>
+	</regla>
+	<regla>
+		<rnum>19</rnum>
+		<izq>literal</izq>
+		<der>false</der>
+	</regla>
+	<regla>
+		<rnum>20</rnum>
+		<izq>literal</izq>
+		<der>true</der>
+	</regla>
+	<regla>
+		<rnum>21</rnum>
+		<izq>instrucciones</izq>
+		<der>instruccion</der>
+	</regla>
+	<regla>
+		<rnum>22</rnum>
+		<izq>instrucciones</izq>
+		<der>instruccion instrucciones</der>
+	</regla>
+	<regla>
+		<rnum>23</rnum>
+		<izq>instruccion</izq>
+		<der>if</der>
+	</regla>
+	<regla>
+		<rnum>24</rnum>
+		<izq>instruccion</izq>
+		<der>while</der>
+	</regla>
+	<regla>
+		<rnum>25</rnum>
+		<izq>instruccion</izq>
+		<der>for</der>
+	</regla>
+	<regla>
+		<rnum>26</rnum>
+		<izq>instruccion</izq>
+		<der>escribir</der>
+	</regla>
+	<regla>
+		<rnum>27</rnum>
+		<izq>instruccion</izq>
+		<der>leer</der>
+	</regla>
+	<regla>
+		<rnum>28</rnum>
+		<izq>instruccion</izq>
+		<der>doloop</der>
+	</regla>
+	<regla>
+		<rnum>29</rnum>
+		<izq>instruccion</izq>
+		<der>asigna</der>
+	</regla>
+	<regla>
+		<rnum>30</rnum>
+		<izq>instruccion</izq>
+		<der>break</der>
+	</regla>
+	<regla>
+		<rnum>31</rnum>
+		<izq>if</izq>
+		<der>if ( condicion ) { instrucciones } else</der>
+	</regla>
+	<regla>
+		<rnum>32</rnum>
+		<izq>else</izq>
+		<der>: { instrucciones }</der>
+	</regla>
+	<regla>
+		<rnum>33</rnum>
+		<izq>else</izq>
+		<der>;</der>
+	</regla>
+	<regla>
+		<rnum>34</rnum>
+		<izq>while</izq>
+		<der>while ( condicion ) { instrucciones }</der>
+	</regla>
+	<regla>
+		<rnum>35</rnum>
+		<izq>for</izq>
+		<der>for ( identificador inicializa ; condicion ; incremento ) {instrucciones }</der>
+	</regla>
+	<regla>
+		<rnum>36</rnum>
+		<izq>incremento</izq>
+		<der>identificador ++</der>
+	</regla>
+	<regla>
+		<rnum>37</rnum>
+		<izq>doloop</izq>
+		<der>do { instrucciones } loop ( condicion ) ;</der>
+	</regla>
+	<regla>
+		<rnum>38</rnum>
+		<izq>escribir</izq>
+		<der>document ( argumentos ) ;</der>
+	</regla>
+	<regla>
+		<rnum>39</rnum>
+		<izq>leer</izq>
+		<der>getElement ( argumentos ) ;</der>
+	</regla>
+	<regla>
+		<rnum>40</rnum>
+		<izq>argumentos</izq>
+		<der>identificador , argumentos</der>
+	</regla>
+	<regla>
+		<rnum>41</rnum>
+		<izq>argumentos</izq>
+		<der>identificador </der>
+	</regla>
+	<regla>
+		<rnum>42</rnum>
+		<izq>asigna</izq>
+		<der>identificador = expresion ;</der>
+	</regla>
+	<regla>
+		<rnum>43</rnum>
+		<izq>condicion</izq>
+		<der>expresion operel expresion</der>
+	</regla>
+	<regla>
+		<rnum>44</rnum>
+		<izq>operel</izq>
+		<der>||</der>
+	</regla>
+	<regla>
+		<rnum>45</rnum>
+		<izq>operel</izq>
+		<der>&amp;&amp;</der>
+	</regla>
+	<regla>
+		<rnum>46</rnum>
+		<izq>operel</izq>
+		<der>!=</der>
+	</regla>
+	<regla>
+		<rnum>47</rnum>
+		<izq>operel</izq>
+		<der>&gt;</der>
+	</regla>
+	<regla>
+		<rnum>48</rnum>
+		<izq>operel</izq>
+		<der>&lt;</der>
+	</regla>
+	<regla>
+		<rnum>49</rnum>
+		<izq>operel</izq>
+		<der>&gt;=</der>
+	</regla>
+	<regla>
+		<rnum>50</rnum>
+		<izq>operel</izq>
+		<der>&lt;=</der>
+	</regla>
+	<regla>
+		<rnum>51</rnum>
+		<izq>operel</izq>
+		<der>== </der>
+	</regla>
+	<regla>
+		<rnum>52</rnum>
+		<izq>expresion</izq>
+		<der>expresion + termino</der>
+	</regla>
+	<regla>
+		<rnum>53</rnum>
+		<izq>expresion</izq>
+		<der>expresion - termino</der>
+	</regla>
+	<regla>
+		<rnum>54</rnum>
+		<izq>expresion</izq>
+		<der>termino</der>
+	</regla>
+	<regla>
+		<rnum>55</rnum>
+		<izq>termino</izq>
+		<der>termino * factor</der>
+	</regla>
+	<regla>
+		<rnum>56</rnum>
+		<izq>termino</izq>
+		<der>termino / factor</der>
+	</regla>
+	<regla>
+		<rnum>57</rnum>
+		<izq>termino</izq>
+		<der>termino ** factor</der>
+	</regla>
+	<regla>
+		<rnum>58</rnum>
+		<izq>termino</izq>
+		<der>factor</der>
+	</regla>
+	<regla>
+		<rnum>59</rnum>
+		<izq>factor</izq>
+		<der>identificador</der>
+	</regla>
+	<regla>
+		<rnum>60</rnum>
+		<izq>factor</izq>
+		<der>( expresion )</der>
+	</regla>
+	<regla>
+		<rnum>61</rnum>
+		<izq>factor</izq>
+		<der>literal</der>
+	</regla>
+</reglas>
